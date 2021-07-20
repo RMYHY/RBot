@@ -7978,3 +7978,353 @@ Traceback (most recent call last):
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\api_impl.py", line 108, in fetch
     raise NetworkError('WebSocket API call timeout')
 aiocqhttp.exceptions.NetworkError: WebSocket API call timeout
+[2021-07-20 15:38:14,601 nonebot] ERROR: Failed to import "hoshino.modules.advance_check.advance_check", error: No module named 'wmi'
+[2021-07-20 15:38:14,616 nonebot] ERROR: No module named 'wmi'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\nonebot\plugin.py", line 249, in load_plugin
+    module = importlib.import_module(module_path)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\advance_check\advance_check.py", line 5, in <module>
+    import wmi  #需要依赖：wmi
+ModuleNotFoundError: No module named 'wmi'
+[2021-07-20 15:42:47,597 nonebot] ERROR: Failed to import "hoshino.modules.advance_check.advance_check", error: No module named 'wmi'
+[2021-07-20 15:42:47,597 nonebot] ERROR: No module named 'wmi'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\nonebot\plugin.py", line 249, in load_plugin
+    module = importlib.import_module(module_path)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\advance_check\advance_check.py", line 5, in <module>
+    import wmi  #需要依赖：wmi
+ModuleNotFoundError: No module named 'wmi'
+[2021-07-20 15:44:13,517 nonebot] ERROR: Failed to import "hoshino.modules.advance_check.advance_check", error: <unknown>.SystemFamily
+[2021-07-20 15:44:13,517 nonebot] ERROR: <unknown>.SystemFamily
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\nonebot\plugin.py", line 249, in load_plugin
+    module = importlib.import_module(module_path)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\advance_check\advance_check.py", line 81, in <module>
+    computer_info_4 = f"系统信息: {CS.SystemFamily}"
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\wmi.py", line 603, in __getattr__
+    return getattr(self.ole_object, attribute)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\win32com\client\dynamic.py", line 554, in __getattr__
+    raise AttributeError("%s.%s" % (self._username_, attr))
+AttributeError: <unknown>.SystemFamily
+[2021-07-20 15:45:46,053 nonebot] ERROR: Failed to import "hoshino.modules.advance_check.advance_check", error: <unknown>.SystemFamily
+[2021-07-20 15:45:46,053 nonebot] ERROR: <unknown>.SystemFamily
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\nonebot\plugin.py", line 249, in load_plugin
+    module = importlib.import_module(module_path)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\advance_check\advance_check.py", line 81, in <module>
+    computer_info_4 = f"系统信息: {CS.SystemFamily}"
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\wmi.py", line 603, in __getattr__
+    return getattr(self.ole_object, attribute)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\win32com\client\dynamic.py", line 554, in __getattr__
+    raise AttributeError("%s.%s" % (self._username_, attr))
+AttributeError: <unknown>.SystemFamily
+[2021-07-20 15:50:15,469 news-tw] ERROR: <class 'requests.exceptions.ConnectionError'> occured when doing scheduled job sonet_news_poller.
+[2021-07-20 15:50:15,469 news-tw] ERROR: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 445, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1347, in getresponse
+    response.begin()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 268, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 532, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 445, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1347, in getresponse
+    response.begin()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 268, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\service.py", line 325, in wrapper
+    ret = await func()
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\priconne\news\__init__.py", line 21, in sonet_news_poller
+    await news_poller(SonetSpider, svtw, '台服官网')
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\priconne\news\__init__.py", line 9, in news_poller
+    await spider.get_update()
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\priconne\news\spider.py", line 41, in get_update
+    resp = await cls.get_response()
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\priconne\news\spider.py", line 30, in get_response
+    resp = await aiorequests.get(cls.url)
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\aiorequests.py", line 70, in get
+    await run_sync_func(requests.get, url=url, params=params, **kwargs))
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\aiorequests.py", line 10, in run_sync_func
+    return await asyncio.get_event_loop().run_in_executor(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in send
+    history = [resp for resp in gen]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in <listcomp>
+    history = [resp for resp in gen]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 237, in resolve_redirects
+    resp = self.send(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+[2021-07-20 15:59:41,898 hoshino] ERROR: 复读失败: <class 'aiocqhttp.exceptions.ActionFailed'>
+[2021-07-20 15:59:41,911 hoshino] ERROR: <ActionFailed data=None, echo={'seq': 5}, msg=SEND_MSG_API_ERROR, retcode=100, status=failed, wording=请参考 go-cqhttp 端输出>
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\groupmaster\random_repeater.py", line 36, in random_repeater
+    await bot.send(ev, util.filt_message(ev.message))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\__init__.py", line 271, in send
+    return await self.send_msg(**params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\__init__.py", line 238, in call_action
+    return await self._api.call_action(action=action, **params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\api_impl.py", line 178, in call_action
+    result = await self._wsr_api.call_action(action, **params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\api_impl.py", line 153, in call_action
+    return _handle_api_result(await
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\api_impl.py", line 38, in _handle_api_result
+    raise ActionFailed(result=result)
+aiocqhttp.exceptions.ActionFailed: <ActionFailed data=None, echo={'seq': 5}, msg=SEND_MSG_API_ERROR, retcode=100, status=failed, wording=请参考 go-cqhttp 端输出>
+[2021-07-20 16:00:10,576 news-tw] ERROR: <class 'requests.exceptions.ConnectionError'> occured when doing scheduled job sonet_news_poller.
+[2021-07-20 16:00:10,576 news-tw] ERROR: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 445, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1347, in getresponse
+    response.begin()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 268, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 532, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 445, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1347, in getresponse
+    response.begin()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 268, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\service.py", line 325, in wrapper
+    ret = await func()
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\priconne\news\__init__.py", line 21, in sonet_news_poller
+    await news_poller(SonetSpider, svtw, '台服官网')
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\priconne\news\__init__.py", line 12, in news_poller
+    news = await spider.get_update()
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\priconne\news\spider.py", line 41, in get_update
+    resp = await cls.get_response()
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\priconne\news\spider.py", line 30, in get_response
+    resp = await aiorequests.get(cls.url)
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\aiorequests.py", line 70, in get
+    await run_sync_func(requests.get, url=url, params=params, **kwargs))
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\aiorequests.py", line 10, in run_sync_func
+    return await asyncio.get_event_loop().run_in_executor(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in send
+    history = [resp for resp in gen]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in <listcomp>
+    history = [resp for resp in gen]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 237, in resolve_redirects
+    resp = self.send(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+[2021-07-20 16:00:25,162 comic] ERROR: <class 'requests.exceptions.ConnectionError'> occured when doing scheduled job update_seeker.
+[2021-07-20 16:00:25,162 comic] ERROR: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 1010, in _validate_conn
+    conn.connect()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 411, in connect
+    self.sock = ssl_wrap_socket(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 532, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 1010, in _validate_conn
+    conn.connect()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 411, in connect
+    self.sock = ssl_wrap_socket(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\service.py", line 325, in wrapper
+    ret = await func()
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\priconne\comic.py", line 105, in update_seeker
+    resp = await aiorequests.get(index_api, timeout=10)
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\aiorequests.py", line 70, in get
+    await run_sync_func(requests.get, url=url, params=params, **kwargs))
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\aiorequests.py", line 10, in run_sync_func
+    return await asyncio.get_event_loop().run_in_executor(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+[2021-07-20 16:01:05,515 hoshino] ERROR: 复读失败: <class 'aiocqhttp.exceptions.ActionFailed'>
+[2021-07-20 16:01:05,524 hoshino] ERROR: <ActionFailed data=None, echo={'seq': 7}, msg=SEND_MSG_API_ERROR, retcode=100, status=failed, wording=请参考 go-cqhttp 端输出>
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\HoshinoBot\Mirai-Bot-Setup\HoshinoBot\hoshino\modules\groupmaster\random_repeater.py", line 48, in random_repeater
+    await bot.send(ev, util.filt_message(ev.message))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\__init__.py", line 271, in send
+    return await self.send_msg(**params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\__init__.py", line 238, in call_action
+    return await self._api.call_action(action=action, **params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\api_impl.py", line 178, in call_action
+    result = await self._wsr_api.call_action(action, **params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\api_impl.py", line 153, in call_action
+    return _handle_api_result(await
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python38\lib\site-packages\aiocqhttp\api_impl.py", line 38, in _handle_api_result
+    raise ActionFailed(result=result)
+aiocqhttp.exceptions.ActionFailed: <ActionFailed data=None, echo={'seq': 7}, msg=SEND_MSG_API_ERROR, retcode=100, status=failed, wording=请参考 go-cqhttp 端输出>

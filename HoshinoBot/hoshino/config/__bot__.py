@@ -28,7 +28,6 @@ RES_URL = 'http://127.0.0.1:5000/C:/Resources/'
 # 如欲启用新模块，请认真阅读部署说明，逐个启用逐个配置
 # 切忌一次性开启多个
 MODULES_ON = {
-    'advance_check',
     'anticoncurrency',
     'aircon',
     #'authMS',
@@ -37,6 +36,7 @@ MODULES_ON = {
     'botchat',
     'botmanage',
     'clanrank',
+    'check',
     'dice',
     'eqa',
     'explosion',
