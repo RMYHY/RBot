@@ -15,7 +15,7 @@ PIC_SIDE_LENGTH = 25
 ONE_TURN_TIME = 20
 DB_PATH = os.path.expanduser('~/.hoshino/pcr_vup_guess_winning_counter.db')
 BLACKLIST_ID = [1072, 1908, 4031, 9000]
-vuplist = pcr_duel.vuplist
+vuplist = list(pcr_duel.vuplist)
 
 class WinnerJudger:
     def __init__(self):
@@ -102,7 +102,7 @@ def uid2card(uid, user_card_dict):
     return str(uid) if uid not in user_card_dict.keys() else user_card_dict[uid]
 
 
-@sv.on_fullmatch(('猜UP排行榜', '猜UP群排行'))
+@sv.on_fullmatch(('猜UP排行榜', '猜UP群排行','猜up排行榜', '猜up群排行'))
 async def description_guess_group_ranking(bot, ev: CQEvent):
     try:
         user_card_dict = await get_user_card_dict(bot, ev.group_id)
@@ -121,7 +121,7 @@ async def description_guess_group_ranking(bot, ev: CQEvent):
         await bot.send(ev, '错误:\n' + str(e))
 
 
-@sv.on_fullmatch('猜UP')
+@sv.on_fullmatch(('猜UP','猜up'))
 async def up_guess(bot, ev: CQEvent):
     try:
         if winner_judger.get_on_off_status(ev.group_id):
