@@ -71,6 +71,7 @@ MODULES_ON = {
     'shaojo',
     'traceanime',
     'translate',
+    'upguess',
     'voiceguess',
     'weather',
     'whattoeat',
