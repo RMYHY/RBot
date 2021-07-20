@@ -121,7 +121,7 @@ async def description_guess_group_ranking(bot, ev: CQEvent):
         await bot.send(ev, '错误:\n' + str(e))
 
 
-@sv.on_fullmatch(('猜UP','猜up'))
+@sv.on_fullmatch(('猜up'))
 async def up_guess(bot, ev: CQEvent):
     try:
         if winner_judger.get_on_off_status(ev.group_id):
