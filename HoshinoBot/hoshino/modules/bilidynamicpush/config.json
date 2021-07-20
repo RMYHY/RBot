@@ -1,6 +1,6 @@
 {
     "message_length_limit":150,
     "uid_bind":{
-        "":["all"]
+        #"123":["all"]
     }
 }
