@@ -26,3 +26,18 @@
 [2021-07-20 12:36:43] [ERROR]: Protocol -> unexpected disconnect: read tcp 172.17.0.14:65446->120.232.18.82:8080: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. 
 [2021-07-20 12:58:44] [WARNING]: 监听反向WS API时出现错误: read tcp 127.0.0.1:53456->127.0.0.1:8090: wsarecv: An existing connection was forcibly closed by the remote host. 
 [2021-07-20 12:58:44] [WARNING]: 向WS服务器 127.0.0.1:8090 推送Event时出现错误: write tcp 127.0.0.1:53456->127.0.0.1:8090: wsasend: An existing connection was forcibly closed by the remote host. 
+[2021-07-20 14:20:48] [WARNING]: 警告: 强烈不推荐通过双击直接运行本程序, 这将导致一些非预料的后果. 
+[2021-07-20 14:20:48] [WARNING]: 将等待10s后启动 
+[2021-07-20 14:21:11] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 
+[2021-07-20 14:21:15] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 
+[2021-07-20 14:28:20] [WARNING]: ocr image error: 服务忙,请稍后重试 
+[2021-07-20 14:29:20] [WARNING]: 监听反向WS API时出现错误: read tcp 127.0.0.1:51846->127.0.0.1:8090: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2021-07-20 14:29:20] [WARNING]: 向WS服务器 127.0.0.1:8090 推送Event时出现错误: write tcp 127.0.0.1:51846->127.0.0.1:8090: wsasend: An existing connection was forcibly closed by the remote host. 
+[2021-07-20 14:29:24] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 
+[2021-07-20 14:29:28] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 
+[2021-07-20 14:29:32] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 
+[2021-07-20 14:29:36] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 
+[2021-07-20 14:29:40] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 
+[2021-07-20 14:29:44] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 
+[2021-07-20 14:29:48] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 
+[2021-07-20 14:29:52] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:8090/ws/ 时出现错误: dial tcp 127.0.0.1:8090: connectex: No connection could be made because the target machine actively refused it. 

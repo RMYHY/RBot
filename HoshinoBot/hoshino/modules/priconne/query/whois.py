@@ -1,7 +1,7 @@
 from hoshino.typing import CQEvent, MessageSegment
 from hoshino.util import FreqLimiter
 
-from .. import chara
+from .. import chara_duel as chara
 from . import sv
 
 lmt = FreqLimiter(5)
