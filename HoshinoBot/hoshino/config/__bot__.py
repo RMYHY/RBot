@@ -31,6 +31,7 @@ MODULES_ON = {
     'anticoncurrency',
     'aircon',
     #'authMS',
+    'bangguess',
     'blacklist',
     'bilidynamicpush',
     'botchat',
@@ -72,7 +73,7 @@ MODULES_ON = {
     'traceanime',
     'translate',
     'upguess',
-    'voiceguess',
+    #'voiceguess',
     'weather',
     'whattoeat',
 }
