@@ -1,52 +1,102 @@
 import random
-from hoshino import Service, util, priv
-from hoshino.typing import CQEvent
 import time
-from .choicer import Choicer
+import re
+import json
 
-sv_help = '''
-今天我要变成少女!
-今天你是什么少女
-'''.strip()
+class Choicer:
+    def _compile(self, d):
+        t = type(d)
+        if t is list:
+            r = []
+            for x in d:
+                if type(x) is str and x.startswith('{') and x.endswith('}'):
+                    for y in self.map[x[1:-1]]:
+                        r.append(y[0])
+                else:
+                    r.append(x)
+            p = 1.0 / len(r)
+            return [(self._compile(x), p) for x in r]
+        elif t is str:
+            return d
+        elif t is dict:
+            if 'start' in d:
+                return [(self._compile(d['d']), d['p'], d['start'])]
+            elif 'p' in d:
+                return [(self._compile(d['d']), d['p'])]
+            else:
+                return [(self._compile(x), d[x]) for x in d]
+        else:
+            return []
+    reg = re.compile('{(.*?)}')
 
-sv = Service(
-    name = '今天也是少女',  #功能名
-    use_priv = priv.NORMAL, #使用权限   
-    manage_priv = priv.ADMIN, #管理权限
-    visible = True, #False隐藏
-    enable_on_default = True, #是否默认启用
-    bundle = '通用', #属于哪一类
-    help_ = sv_help #帮助文本
-    )
+    def _runstr(self, s: str, vals: dict={}) -> str:
+        for k in vals:
+            s = s.replace(f'{{{k}}}', vals[k])
+        for k in self.vals:
+            s = s.replace(f'{{{k}}}', self.vals[k])
+        
+        def repl(match):
+            key = match.group(1)
+            k = key.split(':')[0]
+            if key not in self.m:
+                self.m[key] = set()
+            
+            while True:
+                r = self._run(self.map[k])
+                if r not in self.m[key]:
+                    self.m[key].add(r)
+                    return r
+        
+        return Choicer.reg.sub(repl, s)
 
-@sv.on_fullmatch(["帮助今天也是少女"])
-async def bangzhu(bot, ev):
-    await bot.send(ev, sv_help, at_sender=True)
+    def _run(self, d) -> str:
+        t = type(d)
+        if t is str:
+            return self._runstr(d)
+        elif t is list:
+            if len(d) == 1 and len(d[0]) == 3: # loop expr
+                sb = []
+                d = d[0]
+                x = d[0]
+                i = d[2]
 
-inst = Choicer(util.load_config(__file__))
+                while True:
+                    sb.append(self._runstr(x, {
+                        "i": str(i)
+                    }))
+                    i += 1
+                    if self.rand.random() >= d[1]:
+                        break
+                return ''.join(sb)
+            else:
+                r = self.rand.random()
+                for d2, p in d:
+                    if p > r:
+                        return self._run(d2)
+                    else:
+                        r -= p
+                return ''
+        else:
+            return ''
 
-@sv.on_fullmatch('今天我是什么少女')
-async def my_shoujo(bot, ev: CQEvent):
-    uid = ev.user_id
-    name = ev.sender['card'] or ev.sender['nickname']
-    msg = inst.format_msg(uid, name)
-    await bot.send(ev, msg)
+    def __init__(self, config):
+        self.rand = random.Random()
+        self.date = config['date']
+        self.map = {}
 
+        parts = config['parts']
+        for name in parts:
+            self.map[name] = self._compile(parts[name])
+        
+        self.result = [self._compile(x) for x in config['result']]
 
-@sv.on_prefix('今天你是什么少女')
-@sv.on_suffix('今天你是什么少女')
-async def other_shoujo(bot, ev: CQEvent):
-    arr = []
-    for i in ev.message:
-        if i['type'] == 'at' and i['data']['qq'] != 'all':
-            arr.append(int(i['data']['qq']))
-    gid = ev.group_id
-    for uid in arr:
-        info = await bot.get_group_member_info(
-                group_id=gid,
-                user_id=uid,
-                no_cache=True
-        )
-        name = info['card'] or info['nickname']
-        msg = inst.format_msg(uid, name)
-        await bot.send(ev, msg)
+    def _setseed(self, qq):
+        self.rand.seed(qq * (int(time.time()/3600/24) if self.date else 1))
+    
+    def format_msg(self, qq, name):
+        self.vals = {
+            "name": name
+        }
+        self._setseed(qq)
+        self.m = {}
+        return ''.join([self._run(x) for x in self.result])
