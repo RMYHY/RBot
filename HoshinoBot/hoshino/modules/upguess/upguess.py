@@ -4,7 +4,7 @@ from hoshino import Service
 from hoshino.typing import CQEvent
 from hoshino.modules.priconne import chara_duel as chara
 from hoshino.modules.priconne import _pcr_data_duel as _pcr_data
-from hoshino.modules.priconne.pcr_duel import __init__ as dlc_setup
+from hoshino.modules.priconne import pcr_duel
 
 import hoshino
 import math, sqlite3, os, random, asyncio
@@ -15,7 +15,7 @@ PIC_SIDE_LENGTH = 25
 ONE_TURN_TIME = 20
 DB_PATH = os.path.expanduser('~/.hoshino/pcr_vup_guess_winning_counter.db')
 BLACKLIST_ID = [1072, 1908, 4031, 9000]
-vuplist = dlc_setup.vuplist
+vuplist = pcr_duel.vuplist
 
 class WinnerJudger:
     def __init__(self):
