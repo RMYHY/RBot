@@ -550,8 +550,4 @@ async def anti_vtb(bot, ev):
 # = bot信息 = #
 @sv.on_fullmatch(('自我诊断', '自检', '自我检查', '诊断', '检查'), only_to_me=True)
 async def selfreport(bot, ev):
-    await bot.send(ev, f'HARU 3.2.0 mirai版---bot状态正常', at_sender=True)
-#用来自我记录日后更新失败时的急救版本   
-@sv.on_fullmatch(('framework信息', '框架信息'))
-async def infomation(bot, ev):
-    await bot.send(ev, f'mirai-console-0.1.1(第三方)\n cqhttp-mirai-0.2.3-embedded\n mirai-console-1.0M3-1\n mirai-console-pure-1.0-M3-1\n mirai-core-qqandroid-1.2.2\n hoshino-8/21', at_sender=True)
+    await bot.send(ev, f'HINA Bot状态正常', at_sender=True)
