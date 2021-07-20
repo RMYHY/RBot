@@ -5,7 +5,7 @@ from hoshino.util import DailyNumberLimiter
 
 sv = Service('_feedback_', manage_priv=priv.SUPERUSER, visible=False)
 
-_max = 2
+_max = 5
 lmt = DailyNumberLimiter(_max)
 EXCEED_NOTICE = f'您今天已经喝过{_max}杯了，请明早5点后再来！'
 
@@ -20,5 +20,5 @@ async def feedback(bot, ev: CQEvent):
         await bot.send(ev, "请发送来杯咖啡+您要反馈的内容~", at_sender=True)
     else:
         await bot.send_private_msg(self_id=ev.self_id, user_id=coffee, message=f'QQ为：{uid}的用户在群聊：{ev.group_id}里反馈如下信息：\n{text}')
-        await bot.send(ev, f'您的反馈已发送至维护组！如需提交更多信息也可进群：1121815503\n======\n{text}', at_sender=True)
+        await bot.send(ev, f'您的反馈已发送至维护组！\n======\n{text}', at_sender=True)
         lmt.increase(uid)
