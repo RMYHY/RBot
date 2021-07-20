@@ -8,13 +8,13 @@ from . import Process_Monitor
 
 """
 在下面的列表中填入不希望机器人并发执行的指令, 这些指令只有等其中某个被完毕执行完毕才能开始执行另外一个
-例: ANTI_CONCURRENCY_GROUPS = [['猜头像', '猜角色', 'cygames']]
+例: ANTI_CONCURRENCY_GROUPS = [['猜头像', '猜角色', 'cygames','猜up','猜UP','猜邦邦']]
     
 支持设置多组反并发, 
 如: ANTI_CONCURRENCY_GROUPS = [['猜头像', '猜角色'], ['完美配对', '神经衰弱']]
 表示"猜头像"指令不能和"猜角色"指令并发, "完美配对"指令不能和"神经衰弱"指令并发
 """
-ANTI_CONCURRENCY_GROUPS = [['猜头像', '猜角色', 'cygames']]
+ANTI_CONCURRENCY_GROUPS = [['猜头像', '猜角色', '猜up','猜UP','猜邦邦','猜现实','猜群友']]
 # 是否允许同一条指令自己和自己并发
 SELF_CONCURRENCY = True
 # HoshinoBot的触发器字典，一般不用修改
