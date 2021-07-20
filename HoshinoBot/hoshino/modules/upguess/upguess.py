@@ -9,7 +9,7 @@ from hoshino.modules.priconne.pcr_duel import __init__ as dlc_setup
 import hoshino
 import math, sqlite3, os, random, asyncio
 
-sv = Service('guess-icon', visible=True)
+sv = Service('upguess', visible=True)
 
 PIC_SIDE_LENGTH = 25 
 ONE_TURN_TIME = 20
