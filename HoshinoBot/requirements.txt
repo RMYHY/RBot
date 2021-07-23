@@ -26,3 +26,7 @@ ujson
 msgpack
 logzero
 python-Levenshtein
+bs4
+sogou_tr
+psutil
+filetype
