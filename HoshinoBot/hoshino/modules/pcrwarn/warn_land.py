@@ -51,7 +51,7 @@ async def beici():
     ]
     await svbl.broadcast(msgs, 'beici')
     
-@svbl.scheduled_job('cron', hour='5')
+@svbl.scheduled_job('cron', hour='8')
 async def wakeup():
     path = 'C:/Resources/pcrwarn/（小哼）.mp3'
     msgs = [
