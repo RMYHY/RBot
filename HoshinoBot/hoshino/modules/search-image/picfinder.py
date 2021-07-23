@@ -12,7 +12,7 @@ from hoshino.typing import CQEvent, MessageSegment
 
 sv = Service('search-image', visible=True, manage_priv=priv.ADMIN)
 
-api_key="b8952ab6f38f1821b4d4b132891245e9347df641"#填写你自己的api_key
+api_key="7c5bf42f723c44521d4999a497607906e1ba3739"#填写你自己的api_key
 minsim='70!'#相似度下限，低于下限不显示结果
 thumbSize = (250,250)
 
