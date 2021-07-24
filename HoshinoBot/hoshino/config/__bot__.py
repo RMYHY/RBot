@@ -28,53 +28,56 @@ RES_URL = 'http://127.0.0.1:5000/C:/Resources/'
 # 如欲启用新模块，请认真阅读部署说明，逐个启用逐个配置
 # 切忌一次性开启多个
 MODULES_ON = {
-    'anticoncurrency',
-    'aircon',
-    #'authMS',
-    'bangguess',
-    'blacklist',
-    'bilidynamicpush',
-    'botchat',
-    'botmanage',
-    'clanrank',
-    'check',
-    'dice',
-    'eqa',
-    'explosion',
-    'flac',
-    'generator-image',
-    'generator-text',
-    'groupmaster',
-    'guess-icon',
-    'guess-text',
-    'hedao',
-    'HELP',
-    'hiumsentences',
-    'hourcall',
-    'memberguess',
-    'music',
-    'nowtime',
-    'pcractualguess',
-    'pcr_calendar',
-    'pcr-rank',
-    'pcrclanbattle',
-    'pcrmiddaymusic',
-    'pcrwarn',
-    'pcrsealkiller',
-    'priconne',
-    'rdimg',
-    'record',
-    'report-hoshino',
-    'report-yobot',
-    'revgif',
-    'russian',
-    'search-image',
-    'setu',
-    'shaojo',
-    'traceanime',
-    'translate',
-    'upguess',
-    'voiceguess',
-    'weather',
-    'whattoeat',
+    'anticoncurrency',  #反并发
+    'aircon',           #模拟空调
+    #'authMS',          #授权管理
+    'bangguess',        #猜邦邦（BanG Dream头像）
+    'blacklist',        #黑名单
+    'bilidynamicpush',  #b站动态推送
+    'botchat',          #语言库
+    'botmanage',        #功能管理
+    'clanrank',         #公会排名
+    'check',            #服务器状态查询
+    'dice',             #骰子
+    'epixiv',           #P站搜图
+    'eqa',              #问答
+    'explosion',        #爆裂魔法
+    'flac',             #无损音乐
+    'generator-image',  #表情包生成器
+    'generator-text',   #文章生成器
+    'groupmaster',      #群管理
+    'guess-icon',       #猜头像（pcr头像）
+    'guess-text',       #猜角色（pcr描述）
+    'hedao',            #合刀计算
+    'HELP',             #指令列表帮助
+    'hiumsentences',    #网抑云生成器
+    'hourcall',         #整点时报
+    'memberguess',      #猜群友（群员头像）
+    'music',            #点歌
+    'nowtime',          #报时
+    'pcractualguess',   #猜现实（pcr现实）
+    'pcr_calendar',     #pcr日程
+    'pcr-rank',         #rank表
+    'pcrclanbattle',    #会战功能
+    'pcrmiddaymusic',   #午间音乐
+    'pcrwarn',          #pcr提醒（任务、买药、jjc）
+    'pcrsealkiller',    #海豹杀手
+    'priconne',         #实用功能集合
+    #四格漫画推送，新闻推送，竞技场查询，模拟赛跑，模拟抽卡，贵族决斗
+    'rdimg',            #随机表情包
+    'record',           #pcr角色语音
+    'report-hoshino',   #会战报告-Hoshino版
+    'report-yobot',     #会战报告-Yobot版
+    'revgif',           #GIF倒放
+    'russian',          #俄罗斯轮盘
+    'search-image',     #搜图
+    'setu',             #离线色图
+    #'setu_renew',       #在线色图（未更新）
+    'shaojo',           #今天是什么少女
+    'traceanime',       #搜番
+    'translate',        #翻译
+    'upguess',          #猜up（vtb/vup头像）
+    'voiceguess',       #猜语音
+    'weather',          #天气
+    'whattoeat',        #今天吃什么
 }
