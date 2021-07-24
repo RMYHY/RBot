@@ -5,23 +5,21 @@ sv = Service('_help_', manage_priv=priv.SUPERUSER, visible=False)
 
 HELP_MANUAL = '''
 =====================
-- Bot使用说明 -
+-    Bot使用说明    -
 =====================
-※发送对应的指令即可触发，部分指令需完整独立匹配
-※请以呼唤bot名字来代替@bot
-    本bot可供使用的呢称有：小晴, 野中晴, Haru, haru, Nonaka Haru, nonaka haru, ハル, 乌鸦女, 乌鸦妹, 晴酱, 小晴酱
+※可用呼唤bot名字来代替@bot，可供使用的呢称有：bot, hina, 氷川日菜
 ※[lssv]列出的功能群管理可控制开关
-※更具体的指令可以通过(服务名)[帮助/说明]查看
-    使用例：[setu帮助]  # 查看setu功能的详细说明
-※调教时请注意使用频率，您的滥用可能会导致bot账号被封禁
-*声明：使用本bot即默认您知晓bot提供的涩图等服务的风险。若因此导致封群bot概不负责*
-*依据tx方协议，网络环境及国家政策，bot将视情况分时段停用部分服务，停用前将在群内进行通知*
-*本bot定期更新，请多使用[更新日志]来查看更新内容
+  [启用/禁用 service-name]
+※具体的指令可以通过[service-name帮助/说明]查看
+  例：[setu帮助]  #查看setu功能的详细说明
+※使用本bot即默认您知晓bot提供的涩图等服务的风险。若因此导致封群bot概不负责
+※本bot定期更新，可使用[更新日志]来查看更新内容
+※详细功能说明：https://github.com/RMYHY/RBot/blob/main/HELP.md
+※项目地址：https://github.com/RMYHY/RBot
 ---感谢您选择本bot！祝您使用愉快！---
-Tips：发送【高级使用技巧】可以解锁调教bot的新姿势哦
 '''.strip()
 
-@sv.on_fullmatch(('使用指南', '使用说明', '使用帮助', '使用手册'))
+@sv.on_fullmatch(('使用指南', '使用说明', '使用帮助', '使用手册','高级使用技巧', '使用技巧', '高级技巧'))
 async def main_help(bot, ev: CQEvent):
         await bot.send(ev, f"{HELP_MANUAL}")
 
@@ -82,33 +80,3 @@ COMMAND_MANUAL2 = '''
 @sv.on_fullmatch(('帮助下一页', '指令下一页', '下一页'))
 async def send_command2(bot, ev: CQEvent):
         await bot.send(ev, COMMAND_MANUAL2)
-
-TIP_MANUAL = '''
-- 哪个功能不懂点哪里！ -
-lssv列出的服务名加上“帮助”二字可直接查看此项功能的详细说明哦！
-例如：发送【setu帮助】查看那啥的说明~
-
-- 反馈信息很方便！ -
-发送【来杯咖啡+内容】就可以很快将信息反馈给bot主人哦！
-例如：发送【来杯咖啡 你家bot又不理人啦！】
-
-- 一些有上限的功能可以重置！ -
-比如setu和抽奖，每天有上限，只需要找个管理hxd发送
-【换蛋夹/氪金】并@你 就可以重置上限哦
-
-- 功能很多请配合使用！ -
-猜角色这个小游戏有点难哟，必须要答出角色的本名才算回答成功！那么不知道本名怎么办呢？
-使用 角色别称查询 功能鸭，发送【谁是511】bot就会告诉你
-她叫矛依未啦！
-
-- bot有自检指令！ -
-【(bot呢称)自我诊断】，【框架信息】都可以让bot确认一下通信状况哦！如果有回应
-至少说明bot的hoshino部分正常工作哦！
-
-- 还有更多！ -
-人的思维是无限广袤的！请探索更多调教bot的姿势吧！
-'''.strip()
-
-@sv.on_fullmatch(('高级使用技巧', '使用技巧', '高级技巧'))
-async def send_tip(bot, ev: CQEvent):
-        await bot.send(ev, TIP_MANUAL)
