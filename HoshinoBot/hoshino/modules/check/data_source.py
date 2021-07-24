@@ -4,6 +4,7 @@ import os
 import time
 from decimal import *
 from datetime import datetime
+import hoshino
 from hoshino import log
 
 logger = log.new_logger('check')
@@ -56,7 +57,7 @@ class Check():
         putline.append("当前服务器状态：\nCpu：{}%\n内存：{}%\n丢包率: {}%".format(self.cpu_percent, self.memory_percent, self.packet_lost))
         check_list = await self.get_check_simple()
         if sum(check_list) != 0:
-            salmon.logger.error("System problem detected. check code: {}".format(check_list))
+            hoshino.logger.error("System problem detected. check code: {}".format(check_list))
             if sum(check_list) == 5:
                 putline.append("※服务器已经安详地去了。")
             if sum(check_list) == 4:
