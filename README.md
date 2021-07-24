@@ -20,6 +20,7 @@
 * [鸣谢](#鸣谢)
 
 ## 功能介绍
+[详细功能列表](https://github.com/RMYHY/RBot/blob/main/HELP.md)
 本机器人搭载了[Yobot 公主连结会战基本功能](http://yobot.win/features/)以及以下模块：
 ```python
 MODULES_ON = {
