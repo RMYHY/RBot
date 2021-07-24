@@ -15,7 +15,15 @@ try:
 except:
     import json
 
-sv = Service('gacha')
+sv_help = '''
+[@Bot十连] 转蛋模拟
+[@Bot来发单抽] 转蛋模拟
+[@Bot来一井] 4w5钻！
+[查看卡池] 模拟卡池&出率
+[切换卡池] 更换模拟卡池
+[氪金@某人] 为某人氪金, 恢复抽卡次数
+'''.strip()
+sv = Service('gacha', help_=sv_help, bundle='pcr娱乐')
 jewel_limit = DailyNumberLimiter(15000)
 tenjo_limit = DailyNumberLimiter(5)
 
