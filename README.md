@@ -34,6 +34,7 @@ MODULES_ON = {
     'clanrank',         #公会排名
     'check',            #服务器状态查询
     'dice',             #骰子
+    'epixiv',           #P站搜图
     'eqa',              #问答
     'explosion',        #爆裂魔法
     'flac',             #无损音乐
@@ -65,7 +66,8 @@ MODULES_ON = {
     'revgif',           #GIF倒放
     'russian',          #俄罗斯轮盘
     'search-image',     #搜图
-    'setu',             #色图
+    'setu',             #离线色图
+    #'setu_renew',       #在线色图（未更新）
     'shaojo',           #今天是什么少女
     'traceanime',       #搜番
     'translate',        #翻译
