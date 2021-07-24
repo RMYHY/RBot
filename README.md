@@ -59,6 +59,7 @@ MODULES_ON = {
     'priconne',         #实用功能集合
     #四格漫画推送，新闻推送，竞技场查询，模拟赛跑，模拟抽卡，贵族决斗
     'rdimg',            #随机表情包
+    'record',           #pcr角色语音
     'report-hoshino',   #会战报告-Hoshino版
     'report-yobot',     #会战报告-Yobot版
     'revgif',           #GIF倒放
@@ -69,7 +70,7 @@ MODULES_ON = {
     'traceanime',       #搜番
     'translate',        #翻译
     'upguess',          #猜up（vtb/vup头像）
-    #'voiceguess',      #猜语音（音频暂缺）
+    'voiceguess',       #猜语音
     'weather',          #天气
     'whattoeat',        #今天吃什么
 }
