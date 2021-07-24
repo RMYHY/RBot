@@ -73,7 +73,7 @@ MODULES_ON = {
     'traceanime',
     'translate',
     'upguess',
-    #'voiceguess',
+    'voiceguess',
     'weather',
     'whattoeat',
 }
