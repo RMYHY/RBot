@@ -32,7 +32,7 @@ MODULES_ON = {
     'botchat',          #语言库
     'botmanage',        #功能管理
     'clanrank',         #公会排名
-    'check',            #自检
+    'check',            #服务器状态查询
     'dice',             #骰子
     'eqa',              #问答
     'explosion',        #爆裂魔法
