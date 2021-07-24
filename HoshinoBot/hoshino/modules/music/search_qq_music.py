@@ -16,7 +16,7 @@ async def search(keyword, result_num: int = 3):
     try:
         resp = await aiorequests.get(
             url="http://c.y.qq.com/soso/fcgi-bin/search_for_qq_cp",
-            params=params,
+            data=params,
             headers=headers,
             timeout=3
         )
