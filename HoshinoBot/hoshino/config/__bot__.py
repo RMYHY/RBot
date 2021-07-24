@@ -63,6 +63,7 @@ MODULES_ON = {
     'pcrsealkiller',
     'priconne',
     'rdimg',
+    'record',
     'report-hoshino',
     'report-yobot',
     'revgif',
