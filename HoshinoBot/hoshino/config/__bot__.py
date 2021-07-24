@@ -39,7 +39,7 @@ MODULES_ON = {
     'clanrank',         #公会排名
     'check',            #服务器状态查询
     'dice',             #骰子
-    'epixiv',           #P站搜图
+    #'epixiv',          #P站搜图（未配置）
     'eqa',              #问答
     'explosion',        #爆裂魔法
     'flac',             #无损音乐
