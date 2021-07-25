@@ -7,7 +7,7 @@
 **感谢[Go-cqhttp](https://github.com/Mrs4s/go-cqhttp)项目，[HoshinoBot](https://github.com/Ice-Cirno/HoshinoBot)项目，[Yobot](https://github.com/pcrbot/yobot)项目和众多[bot插件](https://www.pcrbot.com/) 的开发者们以及编写[Mirai-Bot部署指南](https://github.com/Soung2279/Mirai-Bot-Setup)的[@Soung2279](https://github.com/Soung2279)！**
 
 
-**更新于2021年7月24日**
+**更新于2021年7月25日**
 
 ## 目录
 * [功能介绍](#功能介绍)
