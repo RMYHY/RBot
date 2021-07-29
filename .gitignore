@@ -6,8 +6,4 @@ device.json
 session.token
 HoshinoBot/log
 HoshinoBot/hoshino/modules/eqa/data
-<<<<<<< HEAD
 */__pycache__
-=======
-*/__pycache__
->>>>>>> 305bd70a3c0e0473042d09def29607558ef2f68a
