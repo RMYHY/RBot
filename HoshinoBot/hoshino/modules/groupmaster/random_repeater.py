@@ -7,7 +7,7 @@ from hoshino.typing import CQEvent, CQHttpError, Message
 sv = Service('random-repeater', visible=True, manage_priv=priv.ADMIN)
 
 PROB_A = 1.6
-PROB_single = 0.02
+PROB_single = 0.002
 group_stat = {}     # group_id: (last_msg, is_repeated, p)
 
 '''
