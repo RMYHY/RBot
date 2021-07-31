@@ -51,16 +51,17 @@ async def bqjz(bot, ev: CQEvent):
     else: 
         new_illness = {"person" : arr[0], "text" : arr[1]}
         _path = os.path.join(os.path.dirname(__file__), 'data.json')
+        words = None
         if os.path.exists(_path):
-            with open(_path,"r+",encoding='utf-8') as df:
+            with open(_path,"r",encoding='utf-8') as df:
                 try:
                     words = json.load(df)
                 except Exception as e:
                     hoshino.logger.error(f'读取发病小作文时发生错误{type(e)}')
                     return None
+            words.append(new_illness)        
+            with open(_path,"w",encoding='utf-8') as df:        
                 try:
-                    words.append(new_illness)
-                    await df.truncate(0)
                     await json.dump(words,df)
                     await bot.send(ev, "病情已添加", at_sender=True)
                 except Exception as e:
