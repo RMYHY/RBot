@@ -7,6 +7,12 @@ session.token
 HoshinoBot/log
 HoshinoBot/hoshino/modules/eqa/data
 */__pycache__
+HoshinoBot/hoshino/modules/nowtime/nowtime.jpg
+HoshinoBot/hoshino/modules/pcrmiddaymusic/pushed_music.json
+HoshinoBot/hoshino/modules/priconne/CHARA_NAME.json
+HoshinoBot/hoshino/modules/priconne/gacha/backup.json
+HoshinoBot/hoshino/modules/priconne/gacha/config.json
+HoshinoBot/hoshino/modules/priconne/gacha/local_ver.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
