@@ -30,6 +30,7 @@ RES_URL = 'http://127.0.0.1:5000/C:/Resources/'
 MODULES_ON = {
     'anticoncurrency',  #反并发
     'aircon',           #模拟空调
+    'asill',            #发病小作文
     #'authMS',          #授权管理
     'bangguess',        #猜邦邦（BanG Dream头像）
     'blacklist',        #黑名单
