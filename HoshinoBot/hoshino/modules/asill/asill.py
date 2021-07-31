@@ -39,14 +39,14 @@ async def fb(bot, ev: CQEvent):
         illness = get_data()
         text = illness["text"]
         person = illness["person"]
-        text.replace(person,aim)
+        text = text.replace(person,aim)
         await bot.send(ev, text)
 
 @sv.on_prefix('病情加重')
 async def bqjz(bot, ev: CQEvent):
     kw = ev.message.extract_plain_text().strip()
     arr = kw.split('/')
-    if not arr[0] or not arr[1] or arr[2]:
+    if not arr[0] or not arr[1] or len(arr) > 2:
         await bot.send(ev, "请发送[病情加重 对象/小作文]（必须带“/”）~", at_sender=True)
     else: 
         new_illness = {"person" : arr[0], "text" : arr[1]}
