@@ -1,6 +1,6 @@
 # Asill
 ## A-soul 发病小作文
-发病小作文选自[枝江作文展](https://asoulcnki.asia/rank)
+真情实感发病小作文选自[枝江作文展](https://asoulcnki.asia/rank)
 
 ### 安装
 将 `data.json` 与 `asill.py` 至于同一个文件夹并放在 `HoshinoBot/hoshino/modules` 目录下
