@@ -23,8 +23,11 @@ def get_data():
         hoshino.logger.error(f'目录下未找到发病小作文')
     return random.choice(words)
 
+@sv.on_fullmatch(('asill帮助','发病帮助','小作文帮助','帮助发病','小作文发病'))
+async def asill_help(bot, ev: CQEvent):
+        await bot.send(ev, f"{sv.help}")
 
-@sv.on_keyword('小作文')
+@sv.on_fullmatch('小作文')
 async def xzw(bot,ev:CQEvent):
     gid = ev.group_id
     illness = get_data()
