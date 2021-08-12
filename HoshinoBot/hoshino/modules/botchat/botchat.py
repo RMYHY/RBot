@@ -531,13 +531,13 @@ async def anti_holo(bot, ev):
     await bot.send(ev, f'杏奴，爬！', at_sender=True)
     
 #=====反vtb=====#
-@sv.on_keyword(('vtb','vtuber','国v','日v','管人','DD'))
-async def anti_vtb(bot, ev):
-    prob = random.random()
-    if prob < 0.20:
-        await bot.send(ev, R.img(f"keyword/vtb.jpg").cqcode)  
-    elif prob > 0.80:
-        await bot.send(ev, R.img(f"keyword/vtb2.jpg").cqcode)
+#@sv.on_keyword(('vtb','vtuber','国v','日v','管人','DD'))
+#async def anti_vtb(bot, ev):
+#    prob = random.random()
+#    if prob < 0.01:
+#        await bot.send(ev, R.img(f"keyword/vtb.jpg").cqcode)  
+#    elif prob > 0.01:
+#        await bot.send(ev, R.img(f"keyword/vtb2.jpg").cqcode)
         
 #=====ybb=====#
 @sv.on_keyword(('ybb','有病吧'))
