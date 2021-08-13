@@ -1,6 +1,7 @@
 # Asill
 ## A-soul 发病小作文
 真情实感发病小作文选自[枝江作文展](https://asoulcnki.asia/rank)
+
 感谢[@蓝红心](https://github.com/LHXnois)追加的[小作文查重功能](https://github.com/RMYHY/RBot/pull/1)
 
 ### 安装
