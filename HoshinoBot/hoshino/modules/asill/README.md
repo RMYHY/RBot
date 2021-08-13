@@ -1,6 +1,7 @@
 # Asill
 ## A-soul 发病小作文
 真情实感发病小作文选自[枝江作文展](https://asoulcnki.asia/rank)
+感谢[@蓝红心](https://github.com/LHXnois)追加的[小作文查重功能](https://github.com/RMYHY/RBot/pull/1)
 
 ### 安装
 将 `data.json` 与 `asill.py` 至于同一个文件夹并放在 `HoshinoBot/hoshino/modules` 目录下
@@ -21,6 +22,8 @@ MODULES_ON = {
 |发病 对象|	发送一篇写给对象的发病小作文
 |小作文|	随机发送一篇库存发病小作文
 |病情加重 对象/小作文|	将一篇发病小作文添加到数据库中
+|病情查重 小作文|	小作文查重
+|<回复一个小作文> 病情查重|	小作文查重
 
 添加小作文时对象为小作文中对方的称呼（暂不支持多称呼）且斜杠“/”不可省略
 
