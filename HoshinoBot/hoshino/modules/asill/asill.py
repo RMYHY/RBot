@@ -1,6 +1,6 @@
 import requests, random, os, json
-from hoshino import Service, R
-from hoshino.typing import CQEvent
+from hoshino import Service, R, aiorequests
+from hoshino.typing import CQEvent, Message
 from hoshino.util import FreqLimiter
 import hoshino
 
@@ -8,6 +8,8 @@ sv = Service('asill', enable_on_default=True, visible=True,help_='''
 [发病 对象] 对发病对象发病
 [小作文] 随机发送一篇发病小作文
 [病情加重 对象/小作文] 将一篇发病小作文添加到数据库中（必须带“/”）
+[病情查重 小作文] 对一篇小作文进行查重
+[<回复一个小作文> 病情查重] 同上
 '''.strip())
 
 def get_data():
@@ -72,4 +74,42 @@ async def bqjz(bot, ev: CQEvent):
                     return None
         else:
             hoshino.logger.error(f'目录下未找到发病小作文')
+
+
+async def check(bot, ev: CQEvent, text):
+    url = 'https://asoulcnki.asia/v1/api/check'
+    data = {'text': text}
+    try:
+        resp = await aiorequests.post(url, json=data)
+        resp = await resp.json()
+        assert resp['message'] == 'success'
+    except Exception as e:
+        sv.logger.error(e)
+        await bot.finish(ev, '查重失败了...{e}')
+    data = resp['data']
+    if rate := data['rate']:
+        relate = []
+        for i in data.get('related', []):
+            rrate = i.get('rate', 0)
+            rname = i.get('reply', {}).get('m_name', 'unknown')
+            url = i.get('reply_url')
+            relate.append(f'----\n{url}\n{rrate:.2%} / {rname}')
+        relate = '\n'.join(relate)
+        msg = f'总文字复制比：{rate:.2%}\n相似小作文：\n{relate}'
+    else:
+        msg = '没有相似的小作文'
+    await bot.send(ev, msg)
+
+
+@sv.on_prefix('病情查重')
+async def chachong(bot, ev: CQEvent):
+    kw = ev.message.extract_plain_text().strip()
+    await check(bot, ev, kw)
     
+@sv.on_message()
+async def huifuchachong(bot, ev: CQEvent):
+    fseg = ev.message[0]
+    if fseg.type == 'reply' and ev.message.extract_plain_text().strip() == '病情查重':
+        msg = await bot.get_msg(message_id=fseg.data['id'])
+        text = Message(msg['message']).extract_plain_text().strip()
+        await check(bot, ev, text)
