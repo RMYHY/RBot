@@ -3,6 +3,7 @@ logs
 yobot_data
 .lastupdate
 device.json
+device-backup.json
 session.token
 HoshinoBot/log
 HoshinoBot/hoshino/modules/eqa/data
