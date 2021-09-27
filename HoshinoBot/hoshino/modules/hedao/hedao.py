@@ -1,36 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@RMYHY 
-qiuyue0
-/
-pcr_timecalc
-Public
-forked from madoka315/pcr_timecalc
-0
-12
-Code
-Issues
-2
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-pcr_timecalc/pcrtimecalc.py /
-@qiuyue0
-qiuyue0 去掉了不必要的说明
-Latest commit c00dc84 8 days ago
- History
- 2 contributors
-@qiuyue0@madoka315
-55 lines (53 sloc)  2.16 KB
-   
 import hoshino
 import math
 from hoshino import Service, priv
@@ -86,15 +53,3 @@ async def feedback(bot, ev: CQEvent):
     reply=reply+"刀A先出，另一刀可获得 "+result.A_first()+" 秒补偿刀\n"
     reply=reply+"刀B先出，另一刀可获得 "+result.B_first()+" 秒补偿刀"
     await bot.send(ev, reply)
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
