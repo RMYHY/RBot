@@ -94,7 +94,7 @@ service-name帮助
 
 ## 部署方法
 
-**本指南仅对[Mirai-Bot部署指南](https://github.com/Soung2279/Mirai-Bot-Setup)中的失效部分进行更新，再次感谢[@Soung2279](https://github.com/Soung2279)提供的入门级教程！**
+**本指南对[Mirai-Bot部署指南](https://github.com/Soung2279/Mirai-Bot-Setup)中的失效部分进行更新，再次感谢[@Soung2279](https://github.com/Soung2279)提供的入门级教程！**
 
 
 ### 准备工作
@@ -153,9 +153,9 @@ service-name帮助
     C:\Resources\pcrwarn        定时提醒语音
     ......
     ```
-    **推荐**使用打包好的资源包
-    > 百度网盘：**[资源包](https://pan.baidu.com/s/1LKpJ2jOh3XOQSW308TL4bg)**
-    > 提取码：***2200*** 
+    **推荐**使用打包好的资源包,该资源包已包含RBot运行所需的所有图片/音频资源，下载后解压至C盘即可
+    > 百度网盘：**[RBot资源包-Resources.zip(1.67GB)](https://pan.baidu.com/s/1huAfdEH_UK2lEcCdwrzkqw)**
+    > 提取码：***4396*** 
 
 
 4. 运行一次`yobot.exe`, 待弹出的窗口显示完毕后(*显示CTRL + C to quit字样后*)，关闭窗口
