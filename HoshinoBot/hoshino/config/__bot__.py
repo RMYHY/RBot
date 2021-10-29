@@ -74,7 +74,7 @@ MODULES_ON = {
     'russian',          #俄罗斯轮盘
     'search-image',     #搜图
     'setu',             #离线色图
-    #'setu_renew',       #在线色图（未更新）
+    #'setu_renew',      #在线色图（未更新）
     'shaojo',           #今天是什么少女
     'traceanime',       #搜番
     'translate',        #翻译
