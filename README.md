@@ -37,6 +37,7 @@ MODULES_ON = {
     'botchat',          #语言库
     'botmanage',        #功能管理
     'clanrank',         #公会排名
+    'chachengfen',      #查成分B站关注列表
     'check',            #服务器状态查询
     'dice',             #骰子
     #'epixiv',          #P站搜图（未配置）
@@ -45,6 +46,7 @@ MODULES_ON = {
     'flac',             #无损音乐
     'generator-image',  #表情包生成器
     'generator-text',   #文章生成器
+    'good_morning',     #早安晚安
     'groupmaster',      #群管理
     'guess-icon',       #猜头像（pcr头像）
     'guess-text',       #猜角色（pcr描述）
@@ -79,6 +81,7 @@ MODULES_ON = {
     'voiceguess',       #猜语音
     'weather',          #天气
     'whattoeat',        #今天吃什么
+    'wordcloud'       #词云
 }
 ```
 Bot 的功能繁多，可根据自身需要控制开关，在群聊中发送 `lssv` 即可查看各功能模块的启用状态，使用以下命令进行控制：
