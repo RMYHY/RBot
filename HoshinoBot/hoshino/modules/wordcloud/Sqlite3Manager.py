@@ -16,7 +16,7 @@ class Sqlite3Manager:
     def __init__(self):
         if not self.__first_init:
             self.path = os.getcwd()
-            self.__conn = sqlite3.connect(self.path + './hoshino/modules/GroupWordCloudGenerator/chatRecord.db')
+            self.__conn = sqlite3.connect(self.path + './hoshino/modules/wordcloud/chatRecord.db')
             cur = self.__conn.cursor()
             cur.execute(
                 """CREATE TABLE IF NOT EXISTS `chatrecord` (
