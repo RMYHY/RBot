@@ -110,7 +110,7 @@ async def chat_mua(bot, ev):
     else:
         await bot.send(ev, '欸嘿嘿~这么多人有点不好意思呢')
 
-@sv.on_fullmatch(('早安', '早安哦', '早上好', '早上好啊', '早上好呀', '早', 'good morning'))
+@sv.on_fullmatch(('早安哦', '早上好', '早上好啊', '早上好呀', '早', 'good morning'))
 async def goodmorning(bot, ev):
     path = 'C:/Resources/HARU/早安.mp3'
     now_hour=datetime.now(tz).hour
@@ -138,7 +138,7 @@ async def goodevening(bot, ev):
     else:
         await bot.send(ev, f'现在才{now_hour}点，还没天黑呢。嘿嘿', at_sender=True)
 
-@sv.on_fullmatch(('晚安', '晚安哦', '晚安啦', 'good night'))
+@sv.on_fullmatch(('晚安哦', '晚安啦', 'good night'))
 async def goodnight(bot, ev):
     now_hour=datetime.now(tz).hour
     if now_hour<=3 or now_hour>=21:
