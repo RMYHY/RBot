@@ -81,7 +81,7 @@ MODULES_ON = {
     'voiceguess',       #猜语音
     'weather',          #天气
     'whattoeat',        #今天吃什么
-    'wordcloud'       #词云
+    'wordcloud'         #词云
 }
 ```
 Bot 的功能繁多，可根据自身需要控制开关，在群聊中发送 `lssv` 即可查看各功能模块的启用状态，使用以下命令进行控制：
