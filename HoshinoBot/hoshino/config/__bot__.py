@@ -82,5 +82,5 @@ MODULES_ON = {
     'voiceguess',       #猜语音
     'weather',          #天气
     'whattoeat',        #今天吃什么
-    'wordcloud'         #词云
+    'wordcloud',         #词云
 }
