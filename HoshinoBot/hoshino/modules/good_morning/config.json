@@ -1,9 +1,9 @@
 {
     "morning": {
         "get_up_intime": {
-            "enable": true,
-            "early_time": 1,
-            "late_time": 18
+            "enable": false,
+            "early_time": 0,
+            "late_time": 24
         },
         "multi_get_up": {
             "enable": false,
@@ -16,7 +16,7 @@
     },
     "night": {
         "sleep_intime": {
-            "enable": true,
+            "enable": false,
             "early_time": 18,
             "late_time": 6
         },
