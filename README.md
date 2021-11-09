@@ -37,7 +37,7 @@ MODULES_ON = {
     'botchat',          #语言库
     'botmanage',        #功能管理
     'clanrank',         #公会排名
-    #'chachengfen',     #查成分B站关注列表
+    'chachengfen',      #查成分B站关注列表
     'check',            #服务器状态查询
     'dice',             #骰子
     #'epixiv',          #P站搜图（未配置）
