@@ -56,7 +56,7 @@ async def _update_vtb_list():  # 只在启动时更新
 			hoshino.logger.error(f"更新vtb列表时发生错误:{repr(e)}")
 			return
 		data = resp.json()["vtbs"]
-		bilibili_vtbs = filter(lambda x: len(x["accounts"]) != 0 and [lambda a: a["platform"]=='bilibili',x["accounts"]][0].get("platform") == 'bilibili',
+		bilibili_vtbs = filter(lambda x: len(x["accounts"]) != 0 and [lambda a: a["platform"]=='bilibili',x["accounts"][0].get("platform") == 'bilibili',
 		                       data)
 		bilibili_vtbs_dict = {x["accounts"][0].get(
 			"id"): x["name"][x["name"]["default"]] for x in bilibili_vtbs}
