@@ -10,7 +10,7 @@ from hoshino import Service
 
 wife_lists = user_list()
 
-sv = Service('laopo', enable_on_default=False)
+sv = Service('laopo')
 
 @nonebot.scheduler.scheduled_job(
     'cron',
