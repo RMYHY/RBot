@@ -55,6 +55,7 @@ MODULES_ON = {
     'HELP',             #指令列表帮助
     'hiumsentences',    #网抑云生成器
     'hourcall',         #整点时报
+    'laopo'             #群老婆
     'memberguess',      #猜群友（群员头像）
     'music',            #点歌
     'nowtime',          #报时
@@ -78,8 +79,8 @@ MODULES_ON = {
     'shaojo',           #今天是什么少女
     'traceanime',       #搜番
     'translate',        #翻译
-    'upguess',          #猜up（vtb/vup头像）
     'voiceguess',       #猜语音
+    'vtbguess',         #猜vtb/vup头像
     'weather',          #天气
     'whattoeat',        #今天吃什么
     #'wordcloud',       #词云
