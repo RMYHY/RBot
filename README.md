@@ -78,8 +78,8 @@ MODULES_ON = {
     'shaojo',           #今天是什么少女
     'traceanime',       #搜番
     'translate',        #翻译
-    'vtbguess',          #猜vtb/vup头像
     'voiceguess',       #猜语音
+    'vtbguess',         #猜vtb/vup头像
     'weather',          #天气
     'whattoeat',        #今天吃什么
     #'wordcloud',       #词云
