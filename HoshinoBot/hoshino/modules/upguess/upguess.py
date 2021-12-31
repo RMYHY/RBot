@@ -9,7 +9,7 @@ from hoshino.modules.priconne import pcr_duel
 import hoshino
 import math, sqlite3, os, random, asyncio
 
-sv = Service('upguess', visible=True)
+sv = Service('vtbguess', visible=True)
 
 PIC_SIDE_LENGTH = 25 
 ONE_TURN_TIME = 20
@@ -102,7 +102,7 @@ def uid2card(uid, user_card_dict):
     return str(uid) if uid not in user_card_dict.keys() else user_card_dict[uid]
 
 
-@sv.on_fullmatch(('猜UP排行榜', '猜UP群排行','猜up排行榜', '猜up群排行'))
+@sv.on_fullmatch(('猜VUP排行榜', '猜VUP群排行','猜vup排行榜', '猜vup群排行','猜VTB排行榜', '猜VTB群排行','猜vtb排行榜', '猜vtb群排行'))
 async def description_guess_group_ranking(bot, ev: CQEvent):
     try:
         user_card_dict = await get_user_card_dict(bot, ev.group_id)
@@ -112,7 +112,7 @@ async def description_guess_group_ranking(bot, ev: CQEvent):
             if uid != ev.self_id:
                 card_winningcount_dict[user_card_dict[uid]] = winning_counter._get_winning_number(ev.group_id, uid)
         group_ranking = sorted(card_winningcount_dict.items(), key = lambda x:x[1], reverse = True)
-        msg = '猜UP小游戏此群排行为:\n'
+        msg = '猜VUP小游戏此群排行为:\n'
         for i in range(min(len(group_ranking), 10)):
             if group_ranking[i][1] != 0:
                 msg += f'第{i+1}名: {group_ranking[i][0]}, 猜对次数: {group_ranking[i][1]}次\n'
@@ -121,7 +121,7 @@ async def description_guess_group_ranking(bot, ev: CQEvent):
         await bot.send(ev, '错误:\n' + str(e))
 
 
-@sv.on_fullmatch(('猜up'))
+@sv.on_fullmatch(('猜vup','猜vtb'))
 async def up_guess(bot, ev: CQEvent):
     try:
         if winner_judger.get_on_off_status(ev.group_id):
@@ -144,7 +144,7 @@ async def up_guess(bot, ev: CQEvent):
         file_path = os.path.join(dir_path, 'cropped_avatar.png')
         cropped.save(file_path)
         image = MessageSegment.image(f'file:///{os.path.abspath(file_path)}')   
-        msg = f'猜猜这个图片是哪位UP头像的一部分?({ONE_TURN_TIME}s后公布答案){image}'
+        msg = f'猜猜这个图片是哪位VUP头像的一部分?({ONE_TURN_TIME}s后公布答案){image}'
         await bot.send(ev, msg)
         await asyncio.sleep(ONE_TURN_TIME)
         if winner_judger.get_winner(ev.group_id) != '':
