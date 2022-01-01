@@ -106,26 +106,27 @@ async def read():
 @sv.on_command('fuckingIndex', aliases='我的渣男值', only_to_me=False)
 async def wife_self_index(session: NLPSession):
     send_user = session.event['user_id']
-    if send_user in wife_lists.user:
-        for i in wife_lists.all_user:
-            if i.id == send_user:
-                await session.send(message=str(i.fuckingBoy), at_sender=True)
-                break
+    for i in wife_lists.all_user:
+        if i.id == send_user:
+            await session.send(message=str(i.fuckingBoy), at_sender=True)
+            break
     else:
         await session.send(message="没有找到你的信息", at_sender=True)
 
 @sv.on_command('remake', aliases='紫砂', only_to_me=True)
 async def wife_remake(session: NLPSession):
     send_user = session.event['user_id']
-    if send_user in wife_lists.user:
-        await session.send(message="好好改造，重新做人", at_sender=True)
-        for i in wife_lists.user_wife_list:
-            if i.husband == send_user:
-                wife_lists.user_wife_list.remove(i)
-                wife_lists.user.remove(send_user)       
-        wife_lists.all_user.remove(i)
-        await  write(wife_lists)
-        return
+    for i in wife_lists.all_user:
+        if i.id == send_user:
+            if send_user in wife_lists.user:
+                for j in wife_lists.user_wife_list:
+                    if j.husband == send_user:
+                        wife_lists.user_wife_list.remove(i)
+                        wife_lists.user.remove(send_user)  
+            await session.send(message="好好改造，重新做人", at_sender=True)
+            wife_lists.all_user.remove(i)
+            await  write(wife_lists)
+            return
     else:
         await session.send(message="没有找到你的信息", at_sender=True)
         
