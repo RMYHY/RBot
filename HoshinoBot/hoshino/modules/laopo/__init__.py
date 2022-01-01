@@ -106,14 +106,29 @@ async def read():
 @sv.on_command('fuckingIndex', aliases='我的渣男值', only_to_me=False)
 async def wife_self_index(session: NLPSession):
     send_user = session.event['user_id']
-    for i in wife_lists.all_user:
-        if i.id == send_user:
-            await session.send(message=str(i.fuckingBoy), at_sender=True)
-            break
+    if send_user in wife_lists.user:
+        for i in wife_lists.all_user:
+            if i.id == send_user:
+                await session.send(message=str(i.fuckingBoy), at_sender=True)
+                break
     else:
         await session.send(message="没有找到你的信息", at_sender=True)
 
-
+@sv.on_command('remake', aliases='紫砂', only_to_me=True)
+async def wife_remake(session: NLPSession):
+    send_user = session.event['user_id']
+    if send_user in wife_lists.user:
+        await session.send(message="好好改造，重新做人", at_sender=True)
+        for i in wife_lists.user_wife_list:
+            if i.husband == send_user:
+                wife_lists.user_wife_list.remove(i)
+                wife_lists.user.remove(send_user)       
+        wife_lists.all_user.remove(i)
+        await  write(wife_lists)
+        return
+    else:
+        await session.send(message="没有找到你的信息", at_sender=True)
+        
 @sv.on_command('wife', aliases=('老婆'), only_to_me=True)
 # on_natural_language 装饰器将函数声明为一个自然语言处理器
 # keywords 表示需要响应的关键词，类型为任意可迭代对象，元素类型为 str
@@ -174,8 +189,7 @@ async def wife_self_index(session: NLPSession):
     else:
         await session.send(message="你还没有老婆", at_sender=True)
 
-
-@sv.on_command('end', aliases='分手', only_to_me=True)
+@sv.on_command('end', aliases='分手吧', only_to_me=True)
 async def love(session: NLPSession):
     send_user = session.event['user_id']
     for i in wife_lists.all_user:
