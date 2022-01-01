@@ -118,12 +118,12 @@ async def wife_remake(session: NLPSession):
     send_user = session.event['user_id']
     for i in wife_lists.all_user:
         if i.id == send_user:
+            await session.send(message="好好改造，重新做人", at_sender=True)
             if send_user in wife_lists.user:
                 for j in wife_lists.user_wife_list:
                     if j.husband == send_user:
-                        wife_lists.user_wife_list.remove(i)
+                        wife_lists.user_wife_list.remove(j)
                         wife_lists.user.remove(send_user)  
-            await session.send(message="好好改造，重新做人", at_sender=True)
             wife_lists.all_user.remove(i)
             await  write(wife_lists)
             return
