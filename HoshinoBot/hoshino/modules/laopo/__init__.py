@@ -189,7 +189,7 @@ async def wife_self_index(session: NLPSession):
     else:
         await session.send(message="你还没有老婆", at_sender=True)
 
-@sv.on_command('end', aliases='分手吧', only_to_me=True)
+@sv.on_command('end', aliases='分开吧', only_to_me=True)
 async def love(session: NLPSession):
     send_user = session.event['user_id']
     for i in wife_lists.all_user:
