@@ -31,7 +31,7 @@ MODULES_ON = {
     'anticoncurrency',  #反并发
     'aircon',           #模拟空调
     'asill',            #发病小作文
-    #'authMS',          #授权管理
+    #'authMS',           #授权管理
     'bangguess',        #猜邦邦（BanG Dream头像）
     'blacklist',        #黑名单
     'bilidynamicpush',  #b站动态推送
@@ -41,7 +41,7 @@ MODULES_ON = {
     'chachengfen',      #查成分B站关注列表
     #'check',            #服务器状态查询
     'dice',             #骰子
-    #'epixiv',          #P站搜图（未配置）
+    #'epixiv',           #P站搜图（未配置）
     'eqa',              #问答
     'explosion',        #爆裂魔法
     'flac',             #无损音乐
@@ -76,7 +76,7 @@ MODULES_ON = {
     'russian',          #俄罗斯轮盘
     'search-image',     #搜图
     'setu',             #离线色图
-    #'setu_renew',      #在线色图（未更新）
+    #'setu_renew',       #在线色图（未更新）
     'shaojo',           #今天是什么少女
     'traceanime',       #搜番
     'translate',        #翻译
@@ -84,5 +84,5 @@ MODULES_ON = {
     'vtbguess',         #猜vtb/vup头像
     'weather',          #天气
     'whattoeat',        #今天吃什么
-    #'wordcloud',       #词云
+    #'wordcloud',        #词云
 }
