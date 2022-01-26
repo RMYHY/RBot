@@ -59,6 +59,7 @@ MODULES_ON = {
     'memberguess',      #猜群友（群员头像）
     'music',            #点歌
     'nowtime',          #报时
+    'OneKillTwo',       #一穿二计算
     'pcractualguess',   #猜现实（pcr现实）
     'pcr_calendar',     #pcr日程
     'pcr-rank',         #rank表
