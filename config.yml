@@ -1,7 +1,7 @@
 # go-cqhttp 默认配置文件
 
 account: # 账号相关
-  uin: 2226183104 # QQ账号1061301935  2635756262
+  uin: 2635756262 # QQ账号1061301935  2635756262 2226183104
   password: '' # 密码为空时使用扫码登录
   encrypt: false  # 是否开启密码加密
   status: 0      # 在线状态 请参考 https://docs.go-cqhttp.org/guide/config.html#在线状态
