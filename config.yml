@@ -85,7 +85,7 @@ servers:
       middlewares:
         <<: *default
   - ws-reverse:
-      universal: ws://127.0.0.1:8080/ws/
+      universal: ws://127.0.0.1:9063/ws/
       api: ''
       event: ''
       reconnect-interval: 3000
