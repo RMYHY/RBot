@@ -1277,7 +1277,7 @@ class ClanBattle:
             
     def jobs(self):
         trigger = CronTrigger(hour=5)
-        test_trigger = CronTrigger(hour=6, minute=45)
+        test_trigger = CronTrigger(hour=6, minute=55)
 
         def ensure_future_update_all_group_members():
             asyncio.ensure_future(self._update_group_list_async())
