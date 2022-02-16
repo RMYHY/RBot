@@ -5,6 +5,13 @@ yobot_data
 device.json
 device-backup.json
 session.token
+yobot/data
+yobot/logs
+yobot/yobot_data
+yobot/.lastupdate
+yobot/device.json
+yobot/device-backup.json
+yobot/session.token
 HoshinoBot/log
 HoshinoBot/hoshino/modules/eqa/data
 */__pycache__
@@ -14,6 +21,9 @@ HoshinoBot/hoshino/modules/priconne/CHARA_NAME.json
 HoshinoBot/hoshino/modules/priconne/gacha/backup.json
 HoshinoBot/hoshino/modules/priconne/gacha/config.json
 HoshinoBot/hoshino/modules/priconne/gacha/local_ver.json
+HoshinoBot/hoshino/modules/wordcloud/chatRecord.db
+HoshinoBot/hoshino/modules/pcr-rank/cache
+HoshinoBot/hoshino/modules/pcr-rank/config.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
