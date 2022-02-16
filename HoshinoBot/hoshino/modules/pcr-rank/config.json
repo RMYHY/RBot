@@ -3,9 +3,9 @@
     "resize_pic": false,
     "source": {
         "cn": {
-            "name": "席巴鸽",
+            "name": "新兔兔星球",
             "channel": "stable",
-            "route": "cn/xbg"
+            "route": "cn/xtt"
         },
         "tw": {
             "name": "漪梦奈特",
