@@ -6,10 +6,11 @@
 
 **感谢[Go-cqhttp](https://github.com/Mrs4s/go-cqhttp)项目，[HoshinoBot](https://github.com/Ice-Cirno/HoshinoBot)项目，[Yobot](https://github.com/pcrbot/yobot)项目和众多[bot插件](https://www.pcrbot.com/) 的开发者们以及编写[Mirai-Bot部署指南](https://github.com/Soung2279/Mirai-Bot-Setup)的[@Soung2279](https://github.com/Soung2279)！**
 
+**更新于2022年2月16日**
 
-**更新于2021年10月4日**
-
-更新了资源包下载链接，现已包含全部所需图片/音频资源
+新增源码魔改版Yobot，特性为每日5点自动清空所有预约，指令`清空`可不指定特定boss而清除所有boss预约。
+启动魔改版：将`yobot_data`文件夹移至`yobot`文件夹内并启动`yobot/yobot.bat`
+启动原版：将`yobot_data`文件夹移至主文件夹并启动`yobot.exe`
 
 ## 目录
 * [功能介绍](#功能介绍)
