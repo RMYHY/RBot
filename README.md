@@ -69,6 +69,7 @@ MODULES_ON = {
     'priconne',         #实用功能集合
     #四格漫画推送，新闻推送，竞技场查询，模拟赛跑，模拟抽卡，贵族决斗
     'record',           #pcr角色语音
+    'reminder',         #闹钟
     'report-hoshino',   #会战报告-Hoshino版
     'report-yobot',     #会战报告-Yobot版
     'revgif',           #GIF倒放
