@@ -1277,12 +1277,11 @@ class ClanBattle:
             
     def jobs(self):
         trigger = CronTrigger(hour=5)
-        test_trigger = CronTrigger(hour=6, minute=55)
 
         def ensure_future_update_all_group_members():
             asyncio.ensure_future(self._update_group_list_async())
 
-        return ((trigger, ensure_future_update_all_group_members),(test_trigger, self.auto_clear_appointment))
+        return ((trigger, ensure_future_update_all_group_members),(trigger, self.auto_clear_appointment))
 
     def match(self, cmd):
         if self.setting['clan_battle_mode'] != 'web':
@@ -1632,12 +1631,9 @@ class ClanBattle:
                 elif not match.group(1):
                     event = '已清空所有boss的预约'
                     for boss_num in range(1,6):
-                        counts = self.clear_subscribe(group_id, boss_num)
-                        if counts == 0:
-                            _logger.info('群聊 失败 {} {}'.format(
-                                group_id, cmd))
-                        _logger.info('群聊 成功 {} {}'.format(
-                            user_id, cmd))
+                        self.clear_subscribe(group_id, boss_num)
+                    _logger.info('群聊 成功 {} {}'.format(
+                        user_id, cmd))
                     return event
                 else:
                     boss_num = match.group(1) and int(match.group(1))
