@@ -508,6 +508,13 @@ class ClanBattle:
         self._boss_status[group_id] = asyncio.get_event_loop().create_future()
 
         # 单人出刀完成清空单人预约
+        challenges = Clan_challenge.select().where(
+            Clan_challenge.gid == group_id,
+            Clan_challenge.qqid == qqid,
+            Clan_challenge.bid == group.battle_id,
+            Clan_challenge.challenge_pcrdate == d,
+        ).order_by(Clan_challenge.cid)
+        challenges = list(challenges)
         finished = sum(bool(c.boss_health_ramain or c.is_continue)
                        for c in challenges)
         if finished >= 3:
