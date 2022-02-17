@@ -507,9 +507,27 @@ class ClanBattle:
         )
         self._boss_status[group_id] = asyncio.get_event_loop().create_future()
 
+        # 单人出刀完成清空单人预约
+        finished = sum(bool(c.boss_health_ramain or c.is_continue)
+                       for c in challenges)
+        if finished >= 3:
+            for num in range(1,6):
+                Clan_subscribe.delete().where(
+                    Clan_subscribe.gid == group_id,
+                    Clan_subscribe.qqid == qqid,
+                    Clan_subscribe.subscribe_item == num,
+                ).execute()
+            asyncio.ensure_future(
+                self.api.send_group_msg(
+                    group_id=group_id,
+                    message='今天最后一刀\n已清空你的所有预约',
+                )
+            )
+
         if defeat:
             self.notify_subscribe(group_id, group.boss_num)
 
+        # 本群出刀完成清空所有预约
         self.clear_appointment(group_id)
 
         return status
@@ -1277,6 +1295,7 @@ class ClanBattle:
             print("已自动清空所有boss的预约")
         return
 
+    # 本群出刀完成清空所有预约
     def clear_appointment(self, group_id):
         (
             full_challenge_count,
@@ -1287,7 +1306,7 @@ class ClanBattle:
         finished = (full_challenge_count
                     + continued_challenge_count
                     + continued_tailing_challenge_count)
-        if (finished >= 3):
+        if (finished >= 90):
             for boss_num in range(1,6):
                 self.clear_subscribe(group_id, boss_num)
             asyncio.ensure_future(
@@ -1304,6 +1323,7 @@ class ClanBattle:
         def ensure_future_update_all_group_members():
             asyncio.ensure_future(self._update_group_list_async())
 
+        # 每日5点自动清空预约
         #return ((trigger, ensure_future_update_all_group_members),(trigger, self.auto_clear_appointment))
         return ((trigger, ensure_future_update_all_group_members),)
 
