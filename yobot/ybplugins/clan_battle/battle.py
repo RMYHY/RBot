@@ -510,7 +510,13 @@ class ClanBattle:
         if defeat:
             self.notify_subscribe(group_id, group.boss_num)
 
-        self.clear_appointment(group_id)
+        if self.clear_appointment(group_id):
+            asyncio.ensure_future(
+                self.api.send_group_msg(
+                    group_id=group_id,
+                    message='今日出刀完成！已清空所有预约',
+                    )
+                )
 
         return status
 
@@ -1290,8 +1296,8 @@ class ClanBattle:
         if (finished == 3):
             for boss_num in range(1,6):
                 self.clear_subscribe(group_id, boss_num)
-            print("已清空所有boss的预约")
-        return
+            return True
+        return False
 
     def jobs(self):
         trigger = CronTrigger(hour=5)
