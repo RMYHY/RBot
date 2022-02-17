@@ -510,6 +510,8 @@ class ClanBattle:
         if defeat:
             self.notify_subscribe(group_id, group.boss_num)
 
+        self.clear_appointment(group_id)
+
         return status
 
     def undo(self, group_id: Groupid, qqid: QQid) -> BossStatus:
@@ -1274,14 +1276,31 @@ class ClanBattle:
                 self.clear_subscribe(group_id, boss_num)
             print("已自动清空所有boss的预约")
         return
-            
+
+    def clear_appointment(self, group_id):
+        (
+            full_challenge_count,
+            tailing_challenge_count,
+            continued_challenge_count,
+            continued_tailing_challenge_count,
+        ) = self.get_clan_daily_challenge_counts(group_id)
+        finished = (full_challenge_count
+                    + continued_challenge_count
+                    + continued_tailing_challenge_count)
+        if (finished == 3):
+            for boss_num in range(1,6):
+                self.clear_subscribe(group_id, boss_num)
+            print("已清空所有boss的预约")
+        return
+
     def jobs(self):
         trigger = CronTrigger(hour=5)
 
         def ensure_future_update_all_group_members():
             asyncio.ensure_future(self._update_group_list_async())
 
-        return ((trigger, ensure_future_update_all_group_members),(trigger, self.auto_clear_appointment))
+        #return ((trigger, ensure_future_update_all_group_members),(trigger, self.auto_clear_appointment))
+        return ((trigger, ensure_future_update_all_group_members),)
 
     def match(self, cmd):
         if self.setting['clan_battle_mode'] != 'web':
