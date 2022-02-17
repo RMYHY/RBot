@@ -531,11 +531,11 @@ class ClanBattle:
                 )
             )
 
-        if defeat:
-            self.notify_subscribe(group_id, group.boss_num)
-
         # 本群出刀完成清空所有预约
         self.clear_appointment(group_id)
+
+        if defeat:
+            self.notify_subscribe(group_id, group.boss_num)
 
         return status
 
@@ -1313,7 +1313,7 @@ class ClanBattle:
         finished = (full_challenge_count
                     + continued_challenge_count
                     + continued_tailing_challenge_count)
-        if (finished >= 90):
+        if finished >= 90:
             for boss_num in range(1,6):
                 self.clear_subscribe(group_id, boss_num)
             asyncio.ensure_future(
