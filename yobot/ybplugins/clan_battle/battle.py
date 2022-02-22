@@ -527,7 +527,7 @@ class ClanBattle:
             asyncio.ensure_future(
                 self.api.send_group_msg(
                     group_id=group_id,
-                    message='今天最后一刀\n已清空你的所有预约',
+                    message='恭喜下班！\n已清空你的所有预约',
                 )
             )
 
@@ -1319,7 +1319,7 @@ class ClanBattle:
             asyncio.ensure_future(
                 self.api.send_group_msg(
                     group_id=group_id,
-                    message='本群今天最后一刀\n已清空本群所有预约',
+                    message='今日出刀完成！\n已清空本群所有预约',
                 )
             )
         return
