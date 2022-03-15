@@ -423,7 +423,7 @@ service-name帮助
 ### 整点报时
 [Hourcall - 整点报时](https://github.com/RMYHY/RBot/tree/main/HoshinoBot/hoshino/modules/hourcall)
 
-### 整点报时
+### 直播监控
 [Vup Monitors](https://github.com/eric2788/vup_monitors)
 
 
