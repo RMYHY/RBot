@@ -67,7 +67,7 @@ MODULES_ON = {
     'pcrmiddaymusic',   #午间音乐
     'pcrwarn',          #pcr提醒（任务、买药、jjc）
     'pcrsealkiller',    #海豹杀手
-    'petpet',            #头像表情包
+    'petpet',           #头像表情包
     'priconne',         #实用功能集合
     #四格漫画推送，新闻推送，竞技场查询，模拟赛跑，模拟抽卡，贵族决斗
     'record',           #pcr角色语音
