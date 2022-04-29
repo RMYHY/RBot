@@ -84,13 +84,6 @@ servers:
       reconnect-interval: 3000
       middlewares:
         <<: *default
-  - ws-reverse:
-      universal: ws://127.0.0.1:9063/ws/
-      api: ''
-      event: ''
-      reconnect-interval: 3000
-      middlewares:
-        <<: *default
   - ws:
       # 正向WS服务器监听地址
       host: 127.0.0.1
