@@ -13,7 +13,7 @@ import jinja2
 from nonebot.log import logger
 from .htmlrender import html_to_pic
 
-with open('./hoshino/modules/hoshinobot-plugin-ddcheck/config.json','r', encoding='UTF-8') as json_data_file:
+with open('./hoshino/modules/chachengfen/config.json','r', encoding='UTF-8') as json_data_file:
     config = json.load(json_data_file)
 
 bilibili_cookie = config['cookie']
