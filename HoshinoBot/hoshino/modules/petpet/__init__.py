@@ -1,4 +1,5 @@
 import re
+import shlex
 from base64 import b64encode
 from io import BytesIO
 from typing import List, Tuple
@@ -49,15 +50,31 @@ async def handle(ev: CQEvent, prefix: str = "") -> Tuple[List[UserInfo], List[st
     users: List[UserInfo] = []
     args: List[str] = []
     msg = ev.message
+    is_reply = 0
     for msg_seg in msg:
+        if is_reply:
+            is_reply = 0
+            continue
         if msg_seg.type == "at":
             users.append(UserInfo(qq=msg_seg.data["qq"], group=str(ev.group_id)))
         elif msg_seg.type == "image":
             users.append(UserInfo(img_url=msg_seg.data["url"]))
+        elif msg_seg.type == "reply":
+            msg_id = re.search(r"(?:id=)(.+)\]", str(msg_seg)).group(1)
+            source_msg = await sv.bot.get_msg(message_id=int(msg_id))
+            source_msg = source_msg["message"]
+            url = re.search(r"(?:url=)(.+)(?:,)", str(source_msg))
+            if not url:
+                continue
+            users.append(UserInfo(img_url=url.group(1)))
+            is_reply = 1
         elif msg_seg.type == "text":
-            for text in str(msg_seg.data["text"]).split():
-                if prefix != "":
-                    text = re.sub(prefix, "", text)
+            raw_text = re.sub(prefix, "", str(msg_seg)).strip()
+            try:
+                texts = shlex.split(raw_text)
+            except:
+                texts = raw_text.split()
+            for text in texts:
                 if is_qq(text):
                     users.append(UserInfo(qq=text))
                 elif text == "自己":
@@ -71,17 +88,14 @@ async def handle(ev: CQEvent, prefix: str = "") -> Tuple[List[UserInfo], List[st
     return users, args
 
 
-@sv.on_prefix(("/", "pp/"))
+@sv.on_rex(r"^(?:pp)?/([\w@]+)(?:\s.+)?")
 async def gen_image(bot: HoshinoBot, ev: CQEvent):
-    msg = ev.message.extract_plain_text().strip()
-    assert isinstance(msg, str)
+    match: re.Match = ev["match"]
+    hit: str = match.group(1)
     for com in commands:
         for kw in com.keywords:
-            if msg.startswith(kw):
-                if kw == "玩" and msg.startswith("玩游戏"):
-                    continue
-                args = msg[len(kw) :]
-                users, args = await handle(ev, kw)
+            if hit == kw:
+                users, args = await handle(ev, f"/{hit}")
                 sender = UserInfo(qq=str(ev.user_id))
                 await get_user_info(bot, sender)
                 for user in users:

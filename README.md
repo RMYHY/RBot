@@ -43,7 +43,7 @@ MODULES_ON = {
     'bilidynamicpush',  #b站动态推送
     'botchat',          #语言库
     'botmanage',        #功能管理
-    'clanrank',         #公会排名
+    #'clanrank',         #公会排名 已失效
     'chachengfen',      #查成分B站关注列表
     #'check',            #服务器状态查询
     'dice',             #骰子
@@ -76,6 +76,7 @@ MODULES_ON = {
     'petpet',           #头像表情包
     'priconne',         #实用功能集合
     #四格漫画推送，新闻推送，竞技场查询，模拟赛跑，模拟抽卡，贵族决斗
+    'qrcode',           #二维码转链接
     'record',           #pcr角色语音
     'report-hoshino',   #会战报告-Hoshino版
     'report-yobot',     #会战报告-Yobot版
@@ -91,6 +92,7 @@ MODULES_ON = {
     'vtbguess',         #猜vtb/vup头像
     'weather',          #天气
     'whattoeat',        #今天吃什么
+    'when2holiday',     #假期计算
     #'wordcloud',        #词云
 }
 ```

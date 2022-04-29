@@ -25,7 +25,7 @@ cycle_data = {
         'cycle_days': 27,   #不知道为什么阿B把这次改成27天了
         'base_date': datetime.date(2020, 7, 28),  #从巨蟹座开始计算
         'base_month': 5,
-        'battle_days': 6,
+        'battle_days': 5,
         'reserve_days': 0
     },
     'jp': {

@@ -1,18 +1,24 @@
 import math
+import httpx
 import imageio
 from cv2 import cv2 as cv
 import numpy as np
 from enum import Enum
 from io import BytesIO
-from typing import Callable, List, Tuple, Union
+from fontTools.ttLib import TTFont
+from typing import Protocol, List, Tuple, Union
+from typing_extensions import Literal
 from PIL.Image import Image as IMG
 from PIL.ImageFont import FreeTypeFont
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from emoji.unicode_codes import UNICODE_EMOJI
 
 from .download import get_font, get_image
 from .models import Command
 
 DEFAULT_FONT = "SourceHanSansSC-Regular.otf"
+BOLD_FONT = "SourceHanSansSC-Bold.otf"
+EMOJI_FONT = "NotoColorEmoji.ttf"
 
 
 def resize(img: IMG, size: Tuple[int, int]) -> IMG:
@@ -35,6 +41,91 @@ def circle(img: IMG) -> IMG:
 def square(img: IMG) -> IMG:
     length = min(img.width, img.height)
     return cut_size(img, (length, length))
+
+
+async def draw_text(
+    img: IMG,
+    pos: Tuple[float, float],
+    text: str,
+    font: FreeTypeFont,
+    fill=None,
+    spacing: int = 4,
+    align: Literal["left", "right", "center"] = "left",
+    stroke_width: int = 0,
+    stroke_fill=None,
+):
+    if not text:
+        return
+
+    draw = ImageDraw.Draw(img)
+    if all([char not in UNICODE_EMOJI["en"] for char in text]):
+        draw.multiline_text(
+            pos,
+            text,
+            font=font,
+            fill=fill,
+            spacing=spacing,
+            align=align,
+            stroke_width=stroke_width,
+            stroke_fill=stroke_fill,
+        )
+        return
+
+    emoji_font_file = BytesIO(await get_font(EMOJI_FONT))
+    emoji_font = ImageFont.truetype(emoji_font_file, 109, encoding="utf-8")
+    emoji_ttf = TTFont(emoji_font_file)
+
+    def has_emoji(emoji: str):
+        for table in emoji_ttf["cmap"].tables:  # type: ignore
+            if ord(emoji) in table.cmap.keys():
+                return True
+        return False
+
+    lines = text.strip().split("\n")
+    max_w = font.getsize_multiline(text)[0]
+    current_x, current_y = pos
+    current_text = ""
+
+    def draw_current_text():
+        nonlocal current_x, current_text
+        if current_text:
+            draw.text(
+                (current_x, current_y),
+                current_text,
+                font=font,
+                fill=fill,
+                stroke_width=stroke_width,
+                stroke_fill=stroke_fill,
+            )
+            current_x += font.getsize(current_text)[0]
+            current_text = ""
+
+    for line in lines:
+        line_w = font.getsize(line)[0]
+        dw = max_w - line_w
+        current_x = pos[0]
+        if align == "center":
+            current_x += dw / 2
+        elif align == "right":
+            current_x += dw
+
+        for char in line:
+            if char in UNICODE_EMOJI["en"] and has_emoji(char):
+                draw_current_text()
+                emoji_img = Image.new("RGBA", (150, 150))
+                emoji_draw = ImageDraw.Draw(emoji_img)
+                emoji_draw.text((0, 0), char, font=emoji_font, embedded_color=True)
+                emoji_img = emoji_img.crop(emoji_font.getbbox(char))
+                emoji_x, emoji_y = font.getsize(char)
+                emoji_img = fit_size(
+                    emoji_img, (emoji_x, emoji_y), FitSizeMode.INSIDE, FitSizeDir.SOUTH
+                )
+                img.paste(emoji_img, (int(current_x), int(current_y)), emoji_img)
+                current_x += emoji_x
+            else:
+                current_text += char
+        draw_current_text()
+        current_y += font.getsize("A", stroke_width=stroke_width)[1] + spacing
 
 
 # 适应大小模式
@@ -175,6 +266,30 @@ def distort(img: IMG, coefficients: Tuple[float, float, float, float]) -> IMG:
     return Image.fromarray(np.array(res, dtype=np.uint8))
 
 
+def color_mask(img: IMG, color: Tuple[int, int, int]) -> IMG:
+    img = img.convert("RGB")
+    w, h = img.size
+    img_array = np.asarray(img)
+    img_gray = cv.cvtColor(img_array, cv.COLOR_RGB2GRAY)
+    img_hsl = cv.cvtColor(img_array, cv.COLOR_RGB2HLS)
+    img_new = np.zeros((h, w, 3), np.uint8)
+    r, g, b = color
+    rgb_sum = sum(color)
+    for i in range(h):
+        for j in range(w):
+            value = img_gray[i, j]
+            new_color = [
+                int(value * r / rgb_sum),
+                int(value * g / rgb_sum),
+                int(value * b / rgb_sum),
+            ]
+            img_new[i, j] = new_color
+    img_new_hsl = cv.cvtColor(img_new, cv.COLOR_RGB2HLS)
+    result = np.dstack((img_new_hsl[:, :, 0], img_hsl[:, :, 1], img_new_hsl[:, :, 2]))
+    result = cv.cvtColor(result, cv.COLOR_HLS2RGB)
+    return Image.fromarray(result)
+
+
 def save_gif(frames: List[IMG], duration: float) -> BytesIO:
     output = BytesIO()
     imageio.mimsave(output, frames, format="gif", duration=duration)
@@ -197,8 +312,13 @@ def save_jpg(frame: IMG) -> BytesIO:
     return output
 
 
-def make_jpg_or_gif(
-    img: IMG, func: Callable[[IMG], IMG], gif_zoom: float = 1, gif_max_frames: int = 50
+class Maker(Protocol):
+    async def __call__(self, img: IMG) -> IMG:
+        ...
+
+
+async def make_jpg_or_gif(
+    img: IMG, func: Maker, gif_zoom: float = 1, gif_max_frames: int = 50
 ) -> BytesIO:
     """
     制作静图或者动图
@@ -209,7 +329,7 @@ def make_jpg_or_gif(
       * ``direction``: gif 最大帧数，避免生成的 gif 太大
     """
     if not getattr(img, "is_animated", False):
-        return save_jpg(func(img))
+        return save_jpg(await func(img))
     else:
         index = range(img.n_frames)
         ratio = img.n_frames / gif_max_frames
@@ -221,7 +341,7 @@ def make_jpg_or_gif(
         frames = []
         for i in index:
             img.seek(i)
-            new_img = func(img)
+            new_img = await func(img.convert("RGB"))
             frames.append(
                 resize(
                     new_img,
@@ -285,6 +405,18 @@ async def fit_font_size(
             return fontsize
         if fontsize < min_fontsize:
             return 0
+
+
+async def translate(text: str) -> str:
+    url = f"http://fanyi.youdao.com/translate"
+    params = {"type": "ZH_CN2JA", "i": text, "doctype": "json"}
+    try:
+        async with httpx.AsyncClient() as client:
+            resp = await client.get(url, params=params)
+            result = resp.json()
+        return result["translateResult"][0][0]["tgt"]
+    except:
+        return ""
 
 
 async def help_image(commands: List[Command]) -> BytesIO:

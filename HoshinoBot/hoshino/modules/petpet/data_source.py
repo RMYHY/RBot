@@ -7,6 +7,8 @@ from .models import UserInfo, Command
 from .functions import *
 
 commands = [
+    Command(("图片操作",), operations, convert=False, arg_num=2),
+    Command(("万能表情",), universal, convert=False, arg_num=10),
     Command(("摸", "摸摸", "摸头", "摸摸头", "rua"), petpet, arg_num=1),
     Command(("亲", "亲亲"), kiss),
     Command(("贴", "贴贴", "蹭", "蹭蹭"), rub),
@@ -49,8 +51,23 @@ commands = [
     Command(("永远爱你",), love_you),
     Command(("对称",), symmetric, convert=False, arg_num=1),
     Command(("安全感",), safe_sense, convert=False, arg_num=2),
-    Command(("永远喜欢", "我永远喜欢"), always_like, convert=False, arg_num=1),
-    Command(("采访",), interview, convert=False, arg_num=1),
+    Command(("永远喜欢", "我永远喜欢"), always_like, convert=False, arg_num=10),
+    Command(("采访",), interview, arg_num=1),
+    Command(("打拳",), punch, convert=False),
+    Command(("群青",), cyan),
+    Command(("捣",), pound),
+    Command(("捶",), thump),
+    Command(("需要", "你可能需要"), need),
+    Command(("捂脸",), cover_face),
+    Command(("敲",), knock),
+    Command(("垃圾", "垃圾桶"), garbage),
+    Command(("为什么@我", "为什么at我"), whyatme),
+    Command(("像样的亲亲",), decent_kiss, convert=False),
+    Command(("啾啾",), jiujiu, convert=False),
+    Command(("吸", "嗦"), suck),
+    Command(("锤",), hammer),
+    Command(("紧贴", "紧紧贴着"), tightly, convert=False),
+    Command(("注意力涣散",), distracted),
 ]
 
 
