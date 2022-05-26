@@ -24,7 +24,7 @@ HoshinoBot/hoshino/modules/priconne/gacha/local_ver.json
 HoshinoBot/hoshino/modules/wordcloud/chatRecord.db
 HoshinoBot/hoshino/modules/pcr-rank/cache
 HoshinoBot/hoshino/modules/pcr-rank/config.json
-HoshinoBot/hoshino/modules/chachengfen/config.json
+#HoshinoBot/hoshino/modules/chachengfen/config.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
